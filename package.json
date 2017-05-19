@@ -1,0 +1,16 @@
+{
+  "name": "time_scraping",
+  "version": "1.0.0",
+  "description": "get total time it would take to watch Laracasts series",
+  "main": "scrape.js",
+  "dependencies": {
+    "cheerio": "^0.22.0",
+    "request": "^2.81.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Brandon H",
+  "license": "ISC"
+}
