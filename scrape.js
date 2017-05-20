@@ -36,22 +36,20 @@ request(pageUrl, function(error, response, body){
 function getTotalTime(sumMinutes, sumSeconds){
         let minutes = sumMinutes,
             seconds = sumSeconds,
-            hours = 0;
+            hours,
+            newMinutes;
 
-        if (minutes < 60){
-            minutes += Math.floor(seconds / 60);
-            seconds = sumSeconds % 60;
+        minutes += Math.floor(seconds / 60);
 
-            return console.log("It will take you at least " + minutes + " minutes and " + seconds + " second(s) to complete this series.");
+        hours = Math.floor(minutes / 60);
+
+        newMinutes = minutes % 60;
+
+        if (hours < 1) {
+            return console.log("It will take you at least " + newMinutes + " minute(s) to complete this series.");
         } else {
-            hours += Math.floor(minutes / 60);
-            minutes = minutes % 60;
-            minutes += Math.floor(seconds / 60);
-            seconds = sumSeconds % 60;
-
-            return console.log("It will take you at least " + hours + " hour(s) " + minutes + " minute(s) and " + seconds + " second(s) to complete this series.");
+            return console.log("It will take you at least " + hours + " hour(s) and " + newMinutes + " minute(s) to complete this series.");
         }
-        
     }
 
 function formatTimes($){
